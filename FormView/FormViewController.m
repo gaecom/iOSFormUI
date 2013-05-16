@@ -38,6 +38,10 @@ int tag = 100;
     [self.scView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]]];
     [self setTitle:@"首页"];
     
+//    CGRect mainSize = self.view.bounds;
+//    mainSize.size.height = [UIScreen mainScreen].bounds.size.height;
+//    [self.view setFrame:mainSize];
+    
     //NSLog(@"%@", self.scView);
     
     //绘制Banner区
@@ -362,12 +366,11 @@ int tag = 100;
     return YES;
 }
 
-/*
 int prevTag;
 float prevMoveY;
 - (void) textFieldDidBeginEditing:(UITextField *)textField {
     CGRect textFrame = textField.frame;
-    float textY = textFrame.origin.y + textFrame.size.height;
+    float textY = textFrame.origin.y + [[textField superview] superview].frame.origin.y + textFrame.size.height - self.scView.contentOffset.y + 100;
     float bottomY = self.view.frame.size.height - textY;
     if(bottomY >= 216){
         prevTag = -1;
@@ -406,7 +409,7 @@ float prevMoveY;
     [UIView setAnimationDuration:animationDuration];
     self.view.frame = frame;
     [UIView commitAnimations];
-    [textField resignFirstResponder];
-}*/
+    //[textField resignFirstResponder];
+}
 
 @end

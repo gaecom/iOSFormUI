@@ -38,12 +38,6 @@ int tag = 100;
     [self.scView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]]];
     [self setTitle:@"首页"];
     
-//    CGRect mainSize = self.view.bounds;
-//    mainSize.size.height = [UIScreen mainScreen].bounds.size.height;
-//    [self.view setFrame:mainSize];
-    
-    //NSLog(@"%@", self.scView);
-    
     //绘制Banner区
     UIView * bannerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 60)];
     [bannerView setBackgroundColor:[UIColor colorWithRed:80/255.0 green:171/255.0 blue:36/255.0 alpha:1.0]];
@@ -69,10 +63,7 @@ int tag = 100;
     UIView *destInpV = [self drawInputView:CGRectMake(30, 55, self.view.bounds.size.width - 60, 40)];
     [destView addSubview:destInpV];
     CGRect destSize = destInpV.bounds;
-    destSize.origin.x = 3;
-    destSize.origin.y = 2;
-    destSize.size.width -= 6;
-    destSize.size.height -= 4;
+    destSize = [self resizeRect: destSize];
     self.destInp = [[[UITextField alloc] initWithFrame:destSize] autorelease];
     [self.destInp setTag:tag++];
     self.destInp.clearButtonMode = UITextFieldViewModeWhileEditing;
@@ -98,10 +89,7 @@ int tag = 100;
     UIView *contInpV = [self drawInputView:CGRectMake(30, 55, self.view.bounds.size.width - 60, 90)];
     [contView addSubview:contInpV];
     CGRect contSize = contInpV.bounds;
-    contSize.origin.x = 3;
-    contSize.origin.y = 2;
-    contSize.size.width -= 6;
-    contSize.size.height -= 4;
+    contSize = [self resizeRect: contSize];
     self.contInp = [[[UITextView alloc] initWithFrame:contSize] autorelease];
     [self.contInp setTag:tag++];
     self.contInp.returnKeyType = UIReturnKeyDone;
@@ -136,10 +124,7 @@ int tag = 100;
     [timeView addSubview:timeStartView];
     [timeView addSubview:timeEndView];
     CGRect timeSize = timeStartView.bounds;
-    timeSize.origin.x = 3;
-    timeSize.origin.y = 2;
-    timeSize.size.width -= 6;
-    timeSize.size.height -= 4;
+    timeSize = [self resizeRect:timeSize];
     self.timeStart = [[[UITextField alloc] initWithFrame:timeSize] autorelease];
     self.timeEnd = [[[UITextField alloc] initWithFrame:timeSize] autorelease];
     [self.timeStart setTag:tag++];
@@ -175,10 +160,7 @@ int tag = 100;
     UIView *taInpView = [self drawInputView:CGRectMake(30, 55, taView.bounds.size.width - 30 - 190, 40)];
     [taView addSubview:taInpView];
     CGRect taSize = taInpView.bounds;
-    taSize.origin.x = 3;
-    taSize.origin.y = 2;
-    taSize.size.width -= 6;
-    taSize.size.height -= 4;
+    taSize = [self resizeRect:taSize];
     self.taInp = [[[UITextField alloc] initWithFrame:taSize] autorelease];
     [self.taInp setTag:tag++];
     self.taInp.clearButtonMode = UITextFieldViewModeWhileEditing;
@@ -218,10 +200,7 @@ int tag = 100;
     UIView *faInpView = [self drawInputView:CGRectMake(30, 55, faView.bounds.size.width - 60, 40)];
     [faView addSubview:faInpView];
     CGRect faSize = faInpView.bounds;
-    faSize.origin.x = 3;
-    faSize.origin.y = 2;
-    faSize.size.width -= 6;
-    faSize.size.height -= 4;
+    faSize = [self resizeRect:faSize];
     self.faInp = [[[UITextField alloc] initWithFrame:faSize] autorelease];
     [self.faInp setTag:tag++];
     self.faInp.clearButtonMode = UITextFieldViewModeWhileEditing;
@@ -242,6 +221,14 @@ int tag = 100;
 }
 
 #pragma mark - 自定义方法
+
+- (CGRect) resizeRect:(CGRect) rect {
+    rect.origin.x = 3;
+    rect.origin.y = 2;
+    rect.size.width -= 6;
+    rect.size.height -= 4;
+    return rect;
+}
 
 - (UIView *) drawInputView:(CGRect)rect {
     UIView *nv = [[[UIView alloc] initWithFrame:rect] autorelease];

@@ -411,10 +411,16 @@
 		5A4D2FAA174362D30058CD12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: 婷婷 庄 (QJPQNU3HAD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 婷婷 庄 (QJPQNU3HAD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FormView/FormView-Prefix.pch";
 				INFOPLIST_FILE = "FormView/FormView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "B316D9D0-8CA1-4B6D-87C8-BE3B8183D42E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B316D9D0-8CA1-4B6D-87C8-BE3B8183D42E";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -422,10 +428,16 @@
 		5A4D2FAB174362D30058CD12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: 婷婷 庄 (QJPQNU3HAD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 婷婷 庄 (QJPQNU3HAD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FormView/FormView-Prefix.pch";
 				INFOPLIST_FILE = "FormView/FormView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "B316D9D0-8CA1-4B6D-87C8-BE3B8183D42E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B316D9D0-8CA1-4B6D-87C8-BE3B8183D42E";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

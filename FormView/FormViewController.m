@@ -48,7 +48,7 @@ int tag = 100;
     //用户信息待补充
     [self.scView addSubview:bannerView];
     
-    UIView *destView = [[UIView alloc] initWithFrame:CGRectMake(0, 68, self.view.bounds.size.width, 100)];
+    UIView *destView = [[UIView alloc] initWithFrame:CGRectMake(0, 58, self.view.bounds.size.width, 80)];
     [destView setBackgroundColor:[UIColor clearColor]];
     [self.scView addSubview:destView];
     
@@ -60,7 +60,7 @@ int tag = 100;
     [destLabel setText:@"誓言目的"];
     [destView addSubview:destLabel];
     
-    UIView *destInpV = [self drawInputView:CGRectMake(30, 55, self.view.bounds.size.width - 60, 40)];
+    UIView *destInpV = [self drawInputView:CGRectMake(30, 50, self.view.bounds.size.width - 60, 30)];
     [destView addSubview:destInpV];
     CGRect destSize = destInpV.bounds;
     destSize = [self resizeRect: destSize];
@@ -75,7 +75,7 @@ int tag = 100;
     self.destInp.delegate = self;
     [destInpV addSubview:self.destInp];
     
-    UIView *contView = [[UIView alloc] initWithFrame:CGRectMake(0, 165, self.view.bounds.size.width, 150)];
+    UIView *contView = [[UIView alloc] initWithFrame:CGRectMake(0, 140, self.view.bounds.size.width, 140)];
     [contView setBackgroundColor:[UIColor clearColor]];
     [self.scView addSubview:contView];
     
@@ -86,7 +86,7 @@ int tag = 100;
     [contLabel setText:@"誓言内容"];
     [contView addSubview:contLabel];
     
-    UIView *contInpV = [self drawInputView:CGRectMake(30, 55, self.view.bounds.size.width - 60, 90)];
+    UIView *contInpV = [self drawInputView:CGRectMake(30, 50, self.view.bounds.size.width - 60, 80)];
     [contView addSubview:contInpV];
     CGRect contSize = contInpV.bounds;
     contSize = [self resizeRect: contSize];
@@ -99,7 +99,7 @@ int tag = 100;
     self.contInp.delegate = self;
     [contInpV addSubview:self.contInp];
     
-    UIView *timeView = [[UIView alloc] initWithFrame:CGRectMake(0, 315, self.view.bounds.size.width, 100)];
+    UIView *timeView = [[UIView alloc] initWithFrame:CGRectMake(0, 275, self.view.bounds.size.width, 80)];
     [timeView setBackgroundColor:[UIColor clearColor]];
     [self.scView addSubview:timeView];
     
@@ -110,7 +110,7 @@ int tag = 100;
     [timeLabel setText:@"持续时间"];
     [timeView addSubview:timeLabel];
     
-    UILabel *timeTextLabel = [[[UILabel alloc] initWithFrame:CGRectMake(timeView.bounds.size.width / 2 - 20, 55, 40, 40)] autorelease];
+    UILabel *timeTextLabel = [[[UILabel alloc] initWithFrame:CGRectMake(timeView.bounds.size.width / 2 - 20, 50, 40, 30)] autorelease];
     [timeTextLabel setTextAlignment:NSTextAlignmentCenter];
     [timeTextLabel setText:@"到"];
     [timeTextLabel setFont:[UIFont systemFontOfSize:18]];
@@ -119,8 +119,8 @@ int tag = 100;
     [timeView addSubview:timeTextLabel];
     
     int timeW = (self.view.bounds.size.width - 60 - timeTextLabel.bounds.size.width) / 2;
-    UIView *timeStartView = [self drawInputView:CGRectMake(30, 55, timeW, 40)];
-    UIView *timeEndView = [self drawInputView:CGRectMake(timeView.bounds.size.width - 30 - timeW, 55, timeW, 40)];
+    UIView *timeStartView = [self drawInputView:CGRectMake(30, 50, timeW, 30)];
+    UIView *timeEndView = [self drawInputView:CGRectMake(timeView.bounds.size.width - 30 - timeW, 50, timeW, 30)];
     [timeView addSubview:timeStartView];
     [timeView addSubview:timeEndView];
     CGRect timeSize = timeStartView.bounds;
@@ -146,7 +146,7 @@ int tag = 100;
     [timeStartView addSubview:self.timeStart];
     [timeEndView addSubview:self.timeEnd];
     
-    UIView *taView = [[UIView alloc] initWithFrame:CGRectMake(0, 415, self.view.bounds.size.width, 100)];
+    UIView *taView = [[UIView alloc] initWithFrame:CGRectMake(0, 360, self.view.bounds.size.width, 80)];
     [taView setBackgroundColor:[UIColor clearColor]];
     [self.scView addSubview:taView];
     
@@ -157,7 +157,7 @@ int tag = 100;
     [taLabel setText:@"请TA监督"];
     [taView addSubview:taLabel];
     
-    UIView *taInpView = [self drawInputView:CGRectMake(30, 55, taView.bounds.size.width - 30 - 190, 40)];
+    UIView *taInpView = [self drawInputView:CGRectMake(30, 50, taView.bounds.size.width - 30 - 190, 30)];
     [taView addSubview:taInpView];
     CGRect taSize = taInpView.bounds;
     taSize = [self resizeRect:taSize];
@@ -171,7 +171,7 @@ int tag = 100;
     self.taInp.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     self.taInp.delegate = self;
     [taInpView addSubview:self.taInp];
-    UIView *selectView = [self drawButtonView:CGRectMake(taView.bounds.size.width - 30 - 150, 55, 150, 40)
+    UIView *selectView = [self drawButtonView:CGRectMake(taView.bounds.size.width - 30 - 150, 50, 150, 30)
                                   colorFrom:[UIColor colorWithRed:120/255.0 green:212/255.0 blue:75/255.0 alpha:1.0]
                                     colorTo:[UIColor colorWithRed:50/255.0 green:121/255.0 blue:13/255.0 alpha:1.0]
                                 borderColor:[UIColor colorWithRed:39/255.0 green:125/255.0 blue:0.0 alpha:1.0]
@@ -186,7 +186,7 @@ int tag = 100;
     [selectView addSubview:self.select];
     [taView addSubview:selectView];
     
-    UIView *faView = [[UIView alloc] initWithFrame:CGRectMake(0, 515, self.view.bounds.size.width, 100)];
+    UIView *faView = [[UIView alloc] initWithFrame:CGRectMake(0, 450, self.view.bounds.size.width, 80)];
     [faView setBackgroundColor:[UIColor clearColor]];
     [self.scView addSubview:faView];
     
@@ -197,7 +197,7 @@ int tag = 100;
     [faLabel setText:@"违誓惩罚"];
     [faView addSubview:faLabel];
     
-    UIView *faInpView = [self drawInputView:CGRectMake(30, 55, faView.bounds.size.width - 60, 40)];
+    UIView *faInpView = [self drawInputView:CGRectMake(30, 50, faView.bounds.size.width - 60, 30)];
     [faView addSubview:faInpView];
     CGRect faSize = faInpView.bounds;
     faSize = [self resizeRect:faSize];
@@ -213,11 +213,11 @@ int tag = 100;
     [faInpView addSubview:self.faInp];
     
     UIImageView *faSan = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sanjiao"]] autorelease];
-    [faSan setFrame:CGRectMake(faInpView.bounds.size.width - 29, 14, 19, 12)];
+    [faSan setFrame:CGRectMake(faInpView.bounds.size.width - 29, 10, 19, 12)];
     [faSan setBackgroundColor:[UIColor clearColor]];
     [faInpView addSubview:faSan];
     
-    [self.scView setContentSize:CGSizeMake(self.view.bounds.size.width, faView.frame.origin.y + faView.frame.size.height + 200)];
+    [self.scView setContentSize:CGSizeMake(self.view.bounds.size.width, faView.frame.origin.y + faView.frame.size.height + 170)];
 }
 
 #pragma mark - 自定义方法
